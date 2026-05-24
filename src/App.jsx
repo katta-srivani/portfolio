@@ -7,6 +7,9 @@ const profile = {
   role: "MERN Stack Developer",
   email: "kattasrivani74@gmail.com",
   phone: "+91 7093369397",
+  github: "https://github.com/katta-srivani",
+  linkedin: "https://www.linkedin.com/in/katta-srivani-84846a268/",
+  resume: "/Srivani-Katta-Resume.pdf",
   summary:
     "MERN Stack Developer skilled in MongoDB, Express.js, React.js, and Node.js with experience building responsive, scalable, and user-focused full-stack web applications. Passionate about clean code, REST API development, authentication, and modern frontend experiences.",
 };
@@ -299,7 +302,7 @@ function Projects() {
                 {project.tech.map((tech) => <span key={tech} className="rounded-full bg-white/10 px-3 py-1 text-xs text-slate-200">{tech}</span>)}
               </div>
               <div className="mt-6 flex gap-3">
-                <button type="button" disabled className="inline-flex cursor-not-allowed items-center gap-2 rounded-xl border border-white/10 px-4 py-2 text-sm text-white/50"><GitHubIcon size={16} /> GitHub</button>
+                <a href={profile.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-4 py-2 text-sm text-white transition hover:border-cyan-300/50 hover:bg-white/10"><GitHubIcon size={16} /> GitHub</a>
                 <button type="button" disabled className="inline-flex cursor-not-allowed items-center gap-2 rounded-xl bg-cyan-300/50 px-4 py-2 text-sm font-semibold text-slate-950/70"><ExternalLink size={16} /> Demo</button>
               </div>
             </motion.article>
@@ -343,11 +346,11 @@ function Contact() {
         <div className="rounded-3xl border border-white/10 bg-slate-900/80 p-8">
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a href={`mailto:${profile.email}`} className="inline-flex items-center gap-2 rounded-2xl bg-cyan-300 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-200"><Mail size={18} /> Email Me</a>
-            <button type="button" disabled className="inline-flex cursor-not-allowed items-center gap-2 rounded-2xl border border-white/10 px-6 py-3 font-semibold text-white/60"><Download size={18} /> Download Resume</button>
+            <a href={profile.resume} download className="inline-flex items-center gap-2 rounded-2xl border border-white/10 px-6 py-3 font-semibold text-white transition hover:bg-white/10"><Download size={18} /> Download Resume</a>
           </div>
           <div className="mt-6 flex justify-center gap-4 text-slate-300">
-            <button type="button" disabled aria-label="GitHub profile link coming soon" title="GitHub profile link coming soon" className="cursor-not-allowed rounded-full border border-white/10 p-3 text-slate-500"><GitHubIcon size={20} /></button>
-            <button type="button" disabled aria-label="LinkedIn profile link coming soon" title="LinkedIn profile link coming soon" className="cursor-not-allowed rounded-full border border-white/10 p-3 text-slate-500"><LinkedInIcon size={20} /></button>
+            <a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub profile" title="GitHub profile" className="rounded-full border border-white/10 p-3 text-slate-300 transition hover:border-cyan-300/50 hover:text-cyan-300"><GitHubIcon size={20} /></a>
+            <a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn profile" title="LinkedIn profile" className="rounded-full border border-white/10 p-3 text-slate-300 transition hover:border-cyan-300/50 hover:text-cyan-300"><LinkedInIcon size={20} /></a>
           </div>
         </div>
       </div>
