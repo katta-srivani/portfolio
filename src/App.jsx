@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, ExternalLink, Download, Code2, Database, Server, Palette, Award, GraduationCap, BriefcaseBusiness, Menu, X } from "lucide-react";
+import { Mail, Phone, ExternalLink, Download, Code2, Database, Server, Palette, Award, GraduationCap, BriefcaseBusiness, Menu, X, Send } from "lucide-react";
 
 const profile = {
   name: "Srivani K",
@@ -56,39 +56,34 @@ const experiences = [
 
 const projects = [
   {
-    name: "Kanban Board",
-    type: "Task Management Application",
+    name: "Hotel Booking Management",
+    type: "MERN Stack Project",
     description:
-      "A responsive Kanban-style task management app with drag-and-drop columns, modal task views, and persistent local storage.",
-    tech: ["React.js", "Tailwind CSS", "Context API", "useState", "useEffect", "DnD"],
+      "A full-stack hotel booking platform for browsing rooms, managing reservations, handling user authentication, and supporting admin workflows for hotel operations.",
+    tech: ["MongoDB", "Express.js", "React.js", "Node.js", "JWT", "REST APIs"],
+    frontendGithub: "https://github.com/katta-srivani/hotel-frontend",
+    backendGithub: "https://github.com/katta-srivani/HotelBooking-Backend",
+    deployedUrl: "https://hotel-frontend-xlpi.vercel.app/",
   },
   {
-    name: "Notes App",
-    type: "To-Do Application",
+    name: "Shopping App",
+    type: "MERN Stack Project",
     description:
-      "A clean productivity app to add, edit, delete, and mark tasks as completed with dynamic UI updates and local storage persistence.",
-    tech: ["React.js", "Tailwind CSS", "Hooks", "Local Storage"],
+      "A full-stack ecommerce application with product browsing, cart management, authentication, admin product controls, and backend APIs for shopping workflows.",
+    tech: ["MongoDB", "Express.js", "React.js", "Node.js", "JWT", "REST APIs"],
+    frontendGithub: "https://github.com/katta-srivani/shopping-frontend",
+    backendGithub: "https://github.com/katta-srivani/shooping-backend",
+    deployedUrl: "",
   },
   {
-    name: "Movie Search App",
-    type: "API-Based Application",
+    name: "Fullstack Todo App",
+    type: "MERN Stack Project",
     description:
-      "A modern movie search application using OMDb API with real-time search, pagination, routing, detailed movie pages, and favorites.",
-    tech: ["React.js", "React Router", "OMDb API", "Tailwind CSS"],
-  },
-  {
-    name: "Express Book Reviews",
-    type: "Backend API Project",
-    description:
-      "RESTful backend APIs for book reviews with JWT authentication, role-based actions, pagination, optimized queries, and MVC structure.",
-    tech: ["Node.js", "Express.js", "MongoDB", "JWT", "MVC"],
-  },
-  {
-    name: "Authentication & Authorization",
-    type: "MERN Security Project",
-    description:
-      "Secure authentication system with forgot/reset password flow, JWT token handling, bcrypt password hashing, and email verification.",
-    tech: ["MERN", "JWT", "bcrypt", "REST APIs", "MongoDB"],
+      "A full-stack todo application with a React frontend, Express backend, MongoDB storage, and CRUD workflows for adding, updating, viewing, and deleting todos.",
+    tech: ["MongoDB", "Express.js", "React.js", "Node.js", "Vite", "REST APIs"],
+    frontendGithub: "https://github.com/katta-srivani/fullstack-Todo-app-/tree/main/frontend",
+    backendGithub: "https://github.com/katta-srivani/fullstack-Todo-app-/tree/main/backend",
+    deployedUrl: "https://fullstack-todo-app-wheat.vercel.app/",
   },
 ];
 
@@ -288,10 +283,16 @@ function Experience() {
 }
 
 function Projects() {
+  const projectLinks = [
+    { key: "frontendGithub", label: "Frontend", icon: <GitHubIcon size={16} /> },
+    { key: "backendGithub", label: "Backend", icon: <GitHubIcon size={16} /> },
+    { key: "deployedUrl", label: "Live Demo", icon: <ExternalLink size={16} /> },
+  ];
+
   return (
     <section id="projects" className="bg-white/[0.03] px-5 py-24">
       <div className="mx-auto max-w-7xl">
-        <SectionTitle eyebrow="Projects" title="Featured portfolio projects" subtitle="A selection of frontend, backend, and MERN projects demonstrating UI development, API integration, authentication, and state management." />
+        <SectionTitle eyebrow="Projects" title="Featured MERN stack projects" subtitle="Complete projects with descriptions, tech stacks, frontend and backend repositories, and deployed links." />
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
             <motion.article key={project.name} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="group rounded-3xl border border-white/10 bg-slate-900/80 p-5 transition hover:-translate-y-2 hover:border-cyan-300/40 hover:shadow-2xl hover:shadow-cyan-950/40">
@@ -301,9 +302,17 @@ function Projects() {
               <div className="mt-5 flex flex-wrap gap-2">
                 {project.tech.map((tech) => <span key={tech} className="rounded-full bg-white/10 px-3 py-1 text-xs text-slate-200">{tech}</span>)}
               </div>
-              <div className="mt-6 flex gap-3">
-                <a href={profile.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-4 py-2 text-sm text-white transition hover:border-cyan-300/50 hover:bg-white/10"><GitHubIcon size={16} /> GitHub</a>
-                <button type="button" disabled className="inline-flex cursor-not-allowed items-center gap-2 rounded-xl bg-cyan-300/50 px-4 py-2 text-sm font-semibold text-slate-950/70"><ExternalLink size={16} /> Demo</button>
+              <div className="mt-6 flex flex-wrap gap-3">
+                {projectLinks.map((link) => (
+                  project[link.key] ? (
+                    <a key={link.key} href={project[link.key]} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-4 py-2 text-sm text-white transition hover:border-cyan-300/50 hover:bg-white/10">
+                      {link.icon} {link.label}
+                    </a>
+                  ) : null
+                ))}
+                {!projectLinks.some((link) => project[link.key]) && (
+                  <span className="rounded-xl border border-white/10 px-4 py-2 text-sm text-slate-400">Links coming soon</span>
+                )}
               </div>
             </motion.article>
           ))}
@@ -339,19 +348,83 @@ function Education() {
 }
 
 function Contact() {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setForm((current) => ({ ...current, [name]: value }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const subject = encodeURIComponent(`Portfolio contact from ${form.name || "a visitor"}`);
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
+    );
+    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
+  };
+
+  const socialLinks = [
+    { label: "LinkedIn", href: profile.linkedin, icon: <LinkedInIcon size={20} /> },
+    { label: "GitHub", href: profile.github, icon: <GitHubIcon size={20} /> },
+    { label: "Email", href: `mailto:${profile.email}`, icon: <Mail size={20} /> },
+  ];
+
   return (
     <section id="contact" className="bg-white/[0.03] px-5 py-24">
-      <div className="mx-auto max-w-4xl text-center">
-        <SectionTitle eyebrow="Contact" title="Let’s build something useful" subtitle="Open to full stack developer, MERN stack developer, frontend developer, and internship opportunities." />
-        <div className="rounded-3xl border border-white/10 bg-slate-900/80 p-8">
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a href={`mailto:${profile.email}`} className="inline-flex items-center gap-2 rounded-2xl bg-cyan-300 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-200"><Mail size={18} /> Email Me</a>
-            <a href={profile.resume} download className="inline-flex items-center gap-2 rounded-2xl border border-white/10 px-6 py-3 font-semibold text-white transition hover:bg-white/10"><Download size={18} /> Download Resume</a>
-          </div>
-          <div className="mt-6 flex justify-center gap-4 text-slate-300">
-            <a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub profile" title="GitHub profile" className="rounded-full border border-white/10 p-3 text-slate-300 transition hover:border-cyan-300/50 hover:text-cyan-300"><GitHubIcon size={20} /></a>
-            <a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn profile" title="LinkedIn profile" className="rounded-full border border-white/10 p-3 text-slate-300 transition hover:border-cyan-300/50 hover:text-cyan-300"><LinkedInIcon size={20} /></a>
-          </div>
+      <div className="mx-auto max-w-6xl">
+        <SectionTitle eyebrow="Contact" title="Let's build something useful" subtitle="Open to full stack developer, MERN stack developer, frontend developer, and internship opportunities." />
+        <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="rounded-3xl border border-white/10 bg-slate-900/80 p-6">
+            <h3 className="text-xl font-bold text-white">Reach me directly</h3>
+            <p className="mt-3 text-sm leading-6 text-slate-300">
+              Send a message about roles, projects, collaborations, or anything MERN stack related.
+            </p>
+            <div className="mt-6 space-y-3">
+              <a href={`mailto:${profile.email}`} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-sm text-slate-200 transition hover:border-cyan-300/50 hover:bg-white/[0.08]">
+                <Mail className="text-cyan-300" size={20} />
+                {profile.email}
+              </a>
+              <a href={`tel:${profile.phone.replace(/\s/g, "")}`} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-sm text-slate-200 transition hover:border-cyan-300/50 hover:bg-white/[0.08]">
+                <Phone className="text-cyan-300" size={20} />
+                {profile.phone}
+              </a>
+            </div>
+            <div className="mt-7 flex flex-wrap gap-3">
+              {socialLinks.map((link) => (
+                <a key={link.label} href={link.href} target={link.label === "Email" ? undefined : "_blank"} rel={link.label === "Email" ? undefined : "noreferrer"} aria-label={`${link.label} profile`} title={link.label} className="inline-flex items-center gap-2 rounded-2xl border border-white/10 px-4 py-3 text-sm font-semibold text-slate-200 transition hover:border-cyan-300/50 hover:bg-white/10 hover:text-cyan-200">
+                  {link.icon}
+                  {link.label}
+                </a>
+              ))}
+            </div>
+            <a href={profile.resume} download className="mt-7 inline-flex items-center gap-2 rounded-2xl border border-white/10 px-5 py-3 font-semibold text-white transition hover:bg-white/10">
+              <Download size={18} /> Download Resume
+            </a>
+          </motion.div>
+
+          <motion.form initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} onSubmit={handleSubmit} className="rounded-3xl border border-white/10 bg-slate-900/80 p-6">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <label className="text-sm font-semibold text-slate-200">
+                Name
+                <input type="text" name="name" value={form.name} onChange={handleChange} required placeholder="Your name" className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300/60" />
+              </label>
+              <label className="text-sm font-semibold text-slate-200">
+                Email
+                <input type="email" name="email" value={form.email} onChange={handleChange} required placeholder="you@example.com" className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300/60" />
+              </label>
+            </div>
+            <label className="mt-4 block text-sm font-semibold text-slate-200">
+              Message
+              <textarea name="message" value={form.message} onChange={handleChange} required rows={6} placeholder="Tell me about the opportunity or project..." className="mt-2 w-full resize-none rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm leading-6 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300/60" />
+            </label>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <p className="text-xs leading-5 text-slate-400">Submitting opens your email app with the message ready to send.</p>
+              <button type="submit" className="inline-flex items-center justify-center gap-2 rounded-2xl bg-cyan-300 px-6 py-3 font-semibold text-slate-950 shadow-lg shadow-cyan-300/20 transition hover:-translate-y-1 hover:bg-cyan-200">
+                <Send size={18} /> Send Message
+              </button>
+            </div>
+          </motion.form>
         </div>
       </div>
     </section>
