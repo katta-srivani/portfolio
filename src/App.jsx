@@ -55,37 +55,60 @@ const experiences = [
 ];
 
 const projects = [
-  {
-    name: "Hotel Booking Management",
-    type: "MERN Stack Project",
-    description:
-      "A full-stack hotel booking platform for browsing rooms, managing reservations, handling user authentication, and supporting admin workflows for hotel operations.",
-    tech: ["MongoDB", "Express.js", "React.js", "Node.js", "JWT", "REST APIs"],
-    frontendGithub: "https://github.com/katta-srivani/hotel-frontend",
-    backendGithub: "https://github.com/katta-srivani/HotelBooking-Backend",
-    deployedUrl: "https://hotel-frontend-xlpi.vercel.app/",
-  },
-  {
-    name: "Shopping App",
-    type: "MERN Stack Project",
-    description:
-      "A full-stack ecommerce application with product browsing, cart management, authentication, admin product controls, and backend APIs for shopping workflows.",
-    tech: ["MongoDB", "Express.js", "React.js", "Node.js", "JWT", "REST APIs"],
-    frontendGithub: "https://github.com/katta-srivani/shopping-frontend",
-    backendGithub: "https://github.com/katta-srivani/shooping-backend",
-    deployedUrl: "",
-  },
-  {
-    name: "Fullstack Todo App",
-    type: "MERN Stack Project",
-    description:
-      "A full-stack todo application with a React frontend, Express backend, MongoDB storage, and CRUD workflows for adding, updating, viewing, and deleting todos.",
-    tech: ["MongoDB", "Express.js", "React.js", "Node.js", "Vite", "REST APIs"],
-    frontendGithub: "https://github.com/katta-srivani/fullstack-Todo-app-/tree/main/frontend",
-    backendGithub: "https://github.com/katta-srivani/fullstack-Todo-app-/tree/main/backend",
-    deployedUrl: "https://fullstack-todo-app-wheat.vercel.app/",
-  },
+{
+name: "Hotel Booking Management",
+type: "MERN Stack Project",
+description:
+"A full-stack hotel booking platform for browsing rooms, managing reservations, handling user authentication, and supporting admin workflows for hotel operations.",
+tech: ["MongoDB", "Express.js", "React.js", "Node.js", "JWT", "REST APIs"],
+frontendGithub: "https://github.com/katta-srivani/hotel-frontend",
+backendGithub: "https://github.com/katta-srivani/HotelBooking-Backend",
+deployedUrl: "https://hotel-frontend-xlpi.vercel.app/",
+},
+
+{
+name: "Expense Tracker",
+type: "MERN Stack Project",
+description:
+"A full-stack expense tracking application with JWT authentication, expense management, budget tracking, analytics dashboard, reminders, charts, and reporting features. Users can manage expenses, monitor spending patterns, and track monthly budgets through an interactive dashboard.",
+tech: [
+"MongoDB",
+"Express.js",
+"React.js",
+"Node.js",
+"JWT",
+"Prisma",
+"REST APIs",
+],
+frontendGithub:
+"https://github.com/katta-srivani/Expenses-task-frontend-",
+backendGithub:
+"https://github.com/katta-srivani/Expenses-task",
+deployedUrl:
+"https://expenses-task-frontend.vercel.app/",
+},
+
+{
+name: "Fullstack Todo App",
+type: "MERN Stack Project",
+description:
+"A full-stack task management application with React frontend, Express backend, MongoDB database, and complete CRUD functionality. Users can create, update, delete, and manage tasks through a responsive interface.",
+tech: [
+"MongoDB",
+"Express.js",
+"React.js",
+"Node.js",
+"JWT",
+"REST APIs",
+],
+frontendGithub:
+"https://github.com/katta-srivani/fullstack-Todo-app-",
+backendGithub: "",
+deployedUrl:
+"https://fullstack-todo-app-wheat.vercel.app/",
+},
 ];
+
 
 const education = [
   { degree: "B.Tech", institute: "Vignan's Institute of Information Technology", year: "2024" },
