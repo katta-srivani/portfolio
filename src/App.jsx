@@ -89,10 +89,10 @@ deployedUrl:
 },
 
 {
-name: "Fullstack Todo App",
+name: "Employee Management System",
 type: "MERN Stack Project",
 description:
-"A full-stack task management application with React frontend, Express backend, MongoDB database, and complete CRUD functionality. Users can create, update, delete, and manage tasks through a responsive interface.",
+"A full-stack Employee Management System with JWT authentication, employee records management, department management, attendance tracking, search functionality, and admin dashboard. Designed to simulate a real-world HR management application.",
 tech: [
 "MongoDB",
 "Express.js",
@@ -100,12 +100,14 @@ tech: [
 "Node.js",
 "JWT",
 "REST APIs",
+"Mongoose",
 ],
 frontendGithub:
-"https://github.com/katta-srivani/fullstack-Todo-app-",
-backendGithub: "",
+"https://github.com/katta-srivani/EMS-Frontend-",
+backendGithub:
+"https://github.com/katta-srivani/EMS-Backend-",
 deployedUrl:
-"https://fullstack-todo-app-wheat.vercel.app/",
+"https://ems-frontend-ngr4.vercel.app/",
 },
 ];
 
