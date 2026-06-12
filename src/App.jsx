@@ -1,6 +1,22 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, ExternalLink, Download, Code2, Database, Server, Palette, Award, GraduationCap, BriefcaseBusiness, Menu, X, Send } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  ExternalLink,
+  Download,
+  Code2,
+  Database,
+  Server,
+  Palette,
+  Award,
+  GraduationCap,
+  BriefcaseBusiness,
+  Menu,
+  X,
+  Send,
+  BadgeCheck
+} from "lucide-react";
 
 const profile = {
   name: "Srivani K",
