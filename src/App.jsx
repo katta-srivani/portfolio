@@ -373,13 +373,13 @@ const certifications = [
   },
  
   {
-    title: "Introduction to Generative AI",
+    title: "Developing Backend Apps Using nodejs and Express",
     issuer: "Google Cloud / Coursera",
     credential:
       "https://www.coursera.org/account/accomplishments/verify/OAKXSCMTCOPY",
   },
    {
-    title: "Prompt Design in Vertex AI",
+    title: "Introduction to frontend development",
     issuer: "Google Cloud / Coursera",
     credential:
       "https://www.coursera.org/account/accomplishments/verify/WWEIC0Q7OROL",
