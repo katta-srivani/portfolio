@@ -348,6 +348,27 @@ function Projects() {
   );
 }
 
+const certifications = [
+  {
+    title: "Prompt Design in Vertex AI",
+    issuer: "Google Cloud / Coursera",
+    credential:
+      "https://www.coursera.org/account/accomplishments/verify/WWEIC0Q7OROL",
+  },
+  {
+    title: "Introduction to Generative AI",
+    issuer: "Google Cloud / Coursera",
+    credential:
+      "https://www.coursera.org/account/accomplishments/verify/OAKXSCMTCOPY",
+  },
+  {
+    title:
+      "IIT-M Pravartak Certified Full Stack Development Course With AI Tools",
+    issuer: "GUVI | IIT-M Pravartak",
+    credential: "",
+  },
+];
+
 function Education() {
   return (
     <section id="education" className="px-4 py-16">
